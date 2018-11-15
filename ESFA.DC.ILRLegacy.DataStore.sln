@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESFA.DC.ILRLegacy.DataStore.Models", "ESFA.DC.ILRLegacy.DataStore.Models\ESFA.DC.ILRLegacy.DataStore.Models.csproj", "{DE691432-AB75-43AE-865C-8C5E23F78883}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESFA.DC.ILRLegacy.DataStore.Interfaces", "ESFA.DC.ILRLegacy.DataStore.Interfaces\ESFA.DC.ILRLegacy.DataStore.Interfaces.csproj", "{4C156B59-2B60-4371-BCE5-B44B2E36B5C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESFA.DC.ILRLegacy.DataStore.DataAccessLayer", "ESFA.DC.ILRLegacy.DataStore.DataAccessLayer\ESFA.DC.ILRLegacy.DataStore.DataAccessLayer.csproj", "{01763F93-AC4A-4C4C-976B-35C7862F5B2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESFA.DC.ILRLegacy.DataStore.Services", "ESFA.DC.ILRLegacy.DataStore.Services\ESFA.DC.ILRLegacy.DataStore.Services.csproj", "{C86A0171-B20A-4613-B7F7-79928DFB5144}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESFA.DC.ILRLegacy.DataStore.1617EF", "ESFA.DC.ILRLegacy.DataStore.1617EF\ESFA.DC.ILRLegacy.DataStore.1617EF.csproj", "{AEB967D3-75E7-4207-8CED-13E4602827D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESFA.DC.ILRLegacy.DataStore.1718EF", "ESFA.DC.ILRLegacy.DataStore.1718EF\ESFA.DC.ILRLegacy.DataStore.1718EF.csproj", "{FF407EC5-8C74-4792-A79A-3F84E1A39566}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE691432-AB75-43AE-865C-8C5E23F78883}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE691432-AB75-43AE-865C-8C5E23F78883}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE691432-AB75-43AE-865C-8C5E23F78883}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE691432-AB75-43AE-865C-8C5E23F78883}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C156B59-2B60-4371-BCE5-B44B2E36B5C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C156B59-2B60-4371-BCE5-B44B2E36B5C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C156B59-2B60-4371-BCE5-B44B2E36B5C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C156B59-2B60-4371-BCE5-B44B2E36B5C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01763F93-AC4A-4C4C-976B-35C7862F5B2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01763F93-AC4A-4C4C-976B-35C7862F5B2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01763F93-AC4A-4C4C-976B-35C7862F5B2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01763F93-AC4A-4C4C-976B-35C7862F5B2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C86A0171-B20A-4613-B7F7-79928DFB5144}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C86A0171-B20A-4613-B7F7-79928DFB5144}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C86A0171-B20A-4613-B7F7-79928DFB5144}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C86A0171-B20A-4613-B7F7-79928DFB5144}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEB967D3-75E7-4207-8CED-13E4602827D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEB967D3-75E7-4207-8CED-13E4602827D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEB967D3-75E7-4207-8CED-13E4602827D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEB967D3-75E7-4207-8CED-13E4602827D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF407EC5-8C74-4792-A79A-3F84E1A39566}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF407EC5-8C74-4792-A79A-3F84E1A39566}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF407EC5-8C74-4792-A79A-3F84E1A39566}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF407EC5-8C74-4792-A79A-3F84E1A39566}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D53AAAA7-E055-452B-8909-E11FE66D22A8}
+	EndGlobalSection
+EndGlobal
