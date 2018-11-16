@@ -31,7 +31,32 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ESFA.DC.Logging, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ESFA.DC.Logging.0.1.1-beta0001\lib\netstandard2.0\ESFA.DC.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.2.6.0\lib\net46\Serilog.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Enrichers.Environment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Enrichers.Environment.2.1.2\lib\net45\Serilog.Enrichers.Environment.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Enrichers.Process, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Enrichers.Process.2.0.1\lib\net45\Serilog.Enrichers.Process.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Enrichers.Thread, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Enrichers.Thread.3.0.0\lib\net45\Serilog.Enrichers.Thread.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.Console, Version=3.1.1.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.Console.3.1.1\lib\net45\Serilog.Sinks.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.MSSqlServer, Version=5.1.1.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.MSSqlServer.5.1.1\lib\net452\Serilog.Sinks.MSSqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.PeriodicBatching, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.PeriodicBatching.2.1.1\lib\net45\Serilog.Sinks.PeriodicBatching.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,7 +66,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FM70DataService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ESFA.DC.ILRLegacy.DataStore.ILR1617EF\ESFA.DC.ILRLegacy.DataStore.ILR1617EF.csproj">
+      <Project>{AEB967D3-75E7-4207-8CED-13E4602827D6}</Project>
+      <Name>ESFA.DC.ILRLegacy.DataStore.ILR1617EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ESFA.DC.ILRLegacy.DataStore.ILR1718EF\ESFA.DC.ILRLegacy.DataStore.ILR1718EF.csproj">
+      <Project>{FF407EC5-8C74-4792-A79A-3F84E1A39566}</Project>
+      <Name>ESFA.DC.ILRLegacy.DataStore.ILR1718EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ESFA.DC.ILRLegacy.DataStore.Interfaces\ESFA.DC.ILRLegacy.DataStore.Interfaces.csproj">
+      <Project>{4C156B59-2B60-4371-BCE5-B44B2E36B5C3}</Project>
+      <Name>ESFA.DC.ILRLegacy.DataStore.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ESFA.DC.ILRLegacy.DataStore.Models\ESFA.DC.ILRLegacy.DataStore.Models.csproj">
+      <Project>{DE691432-AB75-43AE-865C-8C5E23F78883}</Project>
+      <Name>ESFA.DC.ILRLegacy.DataStore.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
