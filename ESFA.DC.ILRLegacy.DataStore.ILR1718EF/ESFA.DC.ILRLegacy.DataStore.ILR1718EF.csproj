@@ -164,6 +164,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ILR1718Rulebase.edmx</DependentUpon>
     </Compile>
+    <Compile Include="ILR1718_Rulebase.cs" />
+    <Compile Include="Interfaces\IILR1718_Rulebase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SFA_Cases.cs">
       <DependentUpon>ILR1718Rulebase.tt</DependentUpon>
