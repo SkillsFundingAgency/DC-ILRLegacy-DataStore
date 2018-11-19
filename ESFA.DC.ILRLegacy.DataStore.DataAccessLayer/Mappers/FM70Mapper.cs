@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using ESFA.DC.ILRLegacy.DataStore.Interfaces;
 using ESFA.DC.ILRLegacy.Models;
 
 using ILR1617 = ESFA.DC.ILRLegacy.DataStore.ILR1617EF;
@@ -7,7 +8,7 @@ using ILR1718 = ESFA.DC.ILRLegacy.DataStore.ILR1718EF;
 
 namespace ESFA.DC.ILRLegacy.DataStore.DataAccessLayer.Mappers
 {
-    public class FM70Mapper
+    public class FM70Mapper : IFM70Mapper
     {
         public IList<FM70PeriodisedValues> GetPeriodisedValuesFrom1617Entities(
             IList<ILR1617.ESF_LearningDeliveryDeliverable_PeriodisedValues> entities)

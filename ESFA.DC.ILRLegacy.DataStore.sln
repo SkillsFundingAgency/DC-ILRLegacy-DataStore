@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESFA.DC.ILRLegacy.DataStore
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESFA.DC.ILRLegacy.DataStore.ILR1718EF", "ESFA.DC.ILRLegacy.DataStore.ILR1718EF\ESFA.DC.ILRLegacy.DataStore.ILR1718EF.csproj", "{FF407EC5-8C74-4792-A79A-3F84E1A39566}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A9ECC642-AC62-495F-9F3E-80B65A9E42F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESFA.DC.ILRLegacy.DataStore.Services.Tests", "ESFA.DC.ILRLegacy.DataStore.Services.Tests\ESFA.DC.ILRLegacy.DataStore.Services.Tests.csproj", "{EF9AFF2B-151C-4FA6-9E7E-3D6D2009B15E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,9 +49,16 @@ Global
 		{FF407EC5-8C74-4792-A79A-3F84E1A39566}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF407EC5-8C74-4792-A79A-3F84E1A39566}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF407EC5-8C74-4792-A79A-3F84E1A39566}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF9AFF2B-151C-4FA6-9E7E-3D6D2009B15E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF9AFF2B-151C-4FA6-9E7E-3D6D2009B15E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF9AFF2B-151C-4FA6-9E7E-3D6D2009B15E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF9AFF2B-151C-4FA6-9E7E-3D6D2009B15E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EF9AFF2B-151C-4FA6-9E7E-3D6D2009B15E} = {A9ECC642-AC62-495F-9F3E-80B65A9E42F8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D53AAAA7-E055-452B-8909-E11FE66D22A8}

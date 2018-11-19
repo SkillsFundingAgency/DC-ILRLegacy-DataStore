@@ -14,14 +14,14 @@ namespace ESFA.DC.ILRLegacy.DataStore.DataAccessLayer.Repositories
     public class FM70Repository : IFM70Repository
     {
         private readonly ILogger _logger;
-        private readonly ILR1617.ILR1617_Rulebase _1617context;
-        private readonly ILR1718.ILR1718_Rulebase _1718context;
+        private readonly ILR1617.ILR1617_Rulebase _1617Context;
+        private readonly ILR1718.ILR1718_Rulebase _1718Context;
 
         public FM70Repository(ILogger logger)
         {
             _logger = logger;
-            _1617context = new ILR1617.ILR1617_Rulebase();
-            _1718context = new ILR1718.ILR1718_Rulebase();
+            _1617Context = new ILR1617.ILR1617_Rulebase();
+            _1718Context = new ILR1718.ILR1718_Rulebase();
         }
 
         public async Task<IList<ILR1617.ESF_LearningDeliveryDeliverable_PeriodisedValues>> Get1617PeriodisedValues(int ukPrn, CancellationToken cancellationToken)
@@ -34,7 +34,7 @@ namespace ESFA.DC.ILRLegacy.DataStore.DataAccessLayer.Repositories
                     return null;
                 }
 
-                values = await _1617context.ESF_LearningDeliveryDeliverable_PeriodisedValues
+                values = await _1617Context.ESF_LearningDeliveryDeliverable_PeriodisedValues
                     .Where(v => v.UKPRN == ukPrn)
                     .ToListAsync(cancellationToken);
             }
@@ -56,7 +56,7 @@ namespace ESFA.DC.ILRLegacy.DataStore.DataAccessLayer.Repositories
                     return null;
                 }
 
-                values = await _1718context.ESF_LearningDeliveryDeliverable_PeriodisedValues
+                values = await _1718Context.ESF_LearningDeliveryDeliverable_PeriodisedValues
                     .Where(v => v.UKPRN == ukPrn)
                     .ToListAsync(cancellationToken);
             }
