@@ -11,52 +11,52 @@ namespace ESFA.DC.ILRLegacy.DataStore.DataAccessLayer.Mappers
     public class FM70Mapper : IFM70Mapper
     {
         public IList<FM70PeriodisedValues> GetPeriodisedValuesFrom1617Entities(
-            IList<ILR1617.ESF_LearningDeliveryDeliverable_PeriodisedValues> entities)
+            IList<ILR1617.EsfLearningDeliveryDeliverablePeriodisedValues> entities)
         {
-            return entities.Select( e => new FM70PeriodisedValues
+            return entities.Select(e => new FM70PeriodisedValues
             {
-                UKPRN = e.UKPRN,
+                UKPRN = e.Ukprn,
                 LearnRefNumber = e.LearnRefNumber,
                 AimSeqNumber = e.AimSeqNumber,
                 DeliverableCode = e.DeliverableCode,
                 AttributeName = e.AttributeName,
-                Period1 = e.Period_1,
-                Period2 = e.Period_2,
-                Period3 = e.Period_3,
-                Period4 = e.Period_4,
-                Period5 = e.Period_5,
-                Period6 = e.Period_6,
-                Period7 = e.Period_7,
-                Period8 = e.Period_8,
-                Period9 = e.Period_9,
-                Period10 = e.Period_10,
-                Period11 = e.Period_11,
-                Period12 = e.Period_12
+                Period1 = e.Period1,
+                Period2 = e.Period2,
+                Period3 = e.Period3,
+                Period4 = e.Period4,
+                Period5 = e.Period5,
+                Period6 = e.Period6,
+                Period7 = e.Period7,
+                Period8 = e.Period8,
+                Period9 = e.Period9,
+                Period10 = e.Period10,
+                Period11 = e.Period11,
+                Period12 = e.Period12
             }).ToList();
         }
 
         public IList<FM70PeriodisedValues> GetPeriodisedValuesFrom1718Entities(
-            IList<ILR1718.ESF_LearningDeliveryDeliverable_PeriodisedValues> entities)
+            IList<ILR1718.EsfLearningDeliveryDeliverablePeriodisedValues> entities)
         {
             return entities.Select(e => new FM70PeriodisedValues
             {
-                UKPRN = e.UKPRN,
+                UKPRN = e.Ukprn,
                 LearnRefNumber = e.LearnRefNumber,
                 AimSeqNumber = e.AimSeqNumber,
                 DeliverableCode = e.DeliverableCode,
                 AttributeName = e.AttributeName,
-                Period1 = e.Period_1,
-                Period2 = e.Period_2,
-                Period3 = e.Period_3,
-                Period4 = e.Period_4,
-                Period5 = e.Period_5,
-                Period6 = e.Period_6,
-                Period7 = e.Period_7,
-                Period8 = e.Period_8,
-                Period9 = e.Period_9,
-                Period10 = e.Period_10,
-                Period11 = e.Period_11,
-                Period12 = e.Period_12
+                Period1 = e.Period1,
+                Period2 = e.Period2,
+                Period3 = e.Period3,
+                Period4 = e.Period4,
+                Period5 = e.Period5,
+                Period6 = e.Period6,
+                Period7 = e.Period7,
+                Period8 = e.Period8,
+                Period9 = e.Period9,
+                Period10 = e.Period10,
+                Period11 = e.Period11,
+                Period12 = e.Period12
             }).ToList();
         }
     }

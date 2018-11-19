@@ -9,8 +9,8 @@ namespace ESFA.DC.ILRLegacy.DataStore.Interfaces
 {
     public interface IFM70Repository
     {
-        Task<IList<ILR1617.ESF_LearningDeliveryDeliverable_PeriodisedValues>> Get1617PeriodisedValues(int ukPrn, CancellationToken cancellationToken);
+        Task<IList<ILR1617.EsfLearningDeliveryDeliverablePeriodisedValues>> Get1617PeriodisedValues(int ukPrn, CancellationToken cancellationToken);
 
-        Task<IList<ILR1718.ESF_LearningDeliveryDeliverable_PeriodisedValues>> Get1718PeriodisedValues(int ukPrn, CancellationToken cancellationToken);
+        Task<IList<ILR1718.EsfLearningDeliveryDeliverablePeriodisedValues>> Get1718PeriodisedValues(int ukPrn, CancellationToken cancellationToken);
     }
 }
