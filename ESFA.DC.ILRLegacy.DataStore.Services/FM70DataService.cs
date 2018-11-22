@@ -12,8 +12,7 @@ namespace ESFA.DC.ILRLegacy.DataStore.Services
         private readonly IFM70Repository _repository;
         private readonly IFM70Mapper _mapper;
 
-        public FM70DataService(IFM70Repository repository,
-            IFM70Mapper mapper)
+        public FM70DataService(IFM70Repository repository, IFM70Mapper mapper)
         {
             _repository = repository;
             _mapper = mapper;

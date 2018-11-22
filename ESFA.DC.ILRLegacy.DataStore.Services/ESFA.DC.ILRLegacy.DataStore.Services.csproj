@@ -6,13 +6,20 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ESFA.DC.ILRLegacy.DataStore.DataAccessLayer\ESFA.DC.ILRLegacy.DataStore.DataAccessLayer.csproj"  >
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta008">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ESFA.DC.ILRLegacy.DataStore.DataAccessLayer\ESFA.DC.ILRLegacy.DataStore.DataAccessLayer.csproj">
       <PrivateAssets>all</PrivateAssets>
     </ProjectReference>    
-    <ProjectReference Include="..\ESFA.DC.ILRLegacy.DataStore.Interfaces\ESFA.DC.ILRLegacy.DataStore.Interfaces.csproj" >
+    <ProjectReference Include="..\ESFA.DC.ILRLegacy.DataStore.Interfaces\ESFA.DC.ILRLegacy.DataStore.Interfaces.csproj">
       <PrivateAssets>all</PrivateAssets>
     </ProjectReference>
-    <ProjectReference Include="..\ESFA.DC.ILRLegacy.DataStore.Models\ESFA.DC.ILRLegacy.DataStore.Models.csproj" >
+    <ProjectReference Include="..\ESFA.DC.ILRLegacy.DataStore.Models\ESFA.DC.ILRLegacy.DataStore.Models.csproj">
       <PrivateAssets>all</PrivateAssets>
     </ProjectReference>
   </ItemGroup>
@@ -21,9 +28,17 @@
     <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <CodeAnalysisRuleSet>ESFA.DC.ILRLegacy.DataStore.Services.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <CodeAnalysisRuleSet>ESFA.DC.ILRLegacy.DataStore.Services.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
   <Target Name="CopyProjectReferencesToPackage" DependsOnTargets="ResolveReferences">
     <ItemGroup>
-      <BuildOutputInPackage Include="@(ReferenceCopyLocalPaths->WithMetadataValue('ReferenceSourceTarget', 'ProjectReference'))" />
+      <BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference'))" />
     </ItemGroup>
   </Target>
 </Project>
