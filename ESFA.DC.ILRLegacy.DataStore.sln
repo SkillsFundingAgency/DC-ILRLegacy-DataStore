@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ESFA.DC.ILRLegacy.DataStore
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ESFA.DC.ILRLegacy.DataStore.ILR1718EF.Console", "ESFA.DC.ILRLegacy.DataStore.ILR1718EF.Console\ESFA.DC.ILRLegacy.DataStore.ILR1718EF.Console.csproj", "{1AB15BD1-03B5-40B1-BB5D-16263CAF2A84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESFA.DC.ILRLegacy.DataStore.Services.Tests", "ESFA.DC.ILRLegacy.DataStore.Services.Tests\ESFA.DC.ILRLegacy.DataStore.Services.Tests.csproj", "{5FD71778-007C-4CFB-B917-B574B6FED70C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ESFA.DC.ILRLegacy.DataStore.Services.Tests", "ESFA.DC.ILRLegacy.DataStore.Services.Tests\ESFA.DC.ILRLegacy.DataStore.Services.Tests.csproj", "{5FD71778-007C-4CFB-B917-B574B6FED70C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESFA.DC.ILRLegacy.DataStore.Configuration", "ESFA.DC.ILRLegacy.DataStore.Configuration\ESFA.DC.ILRLegacy.DataStore.Configuration.csproj", "{EC202AEE-5503-4AEA-99F9-3731D233558C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +69,10 @@ Global
 		{5FD71778-007C-4CFB-B917-B574B6FED70C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FD71778-007C-4CFB-B917-B574B6FED70C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FD71778-007C-4CFB-B917-B574B6FED70C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC202AEE-5503-4AEA-99F9-3731D233558C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC202AEE-5503-4AEA-99F9-3731D233558C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC202AEE-5503-4AEA-99F9-3731D233558C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC202AEE-5503-4AEA-99F9-3731D233558C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
