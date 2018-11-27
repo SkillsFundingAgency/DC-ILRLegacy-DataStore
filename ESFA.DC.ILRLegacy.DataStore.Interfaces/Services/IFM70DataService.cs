@@ -3,7 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using ESFA.DC.ILRLegacy.Models;
 
-namespace ESFA.DC.ILRLegacy.DataStore.Interfaces
+namespace ESFA.DC.ILRLegacy.DataStore.Interfaces.Services
 {
     public interface IFM70DataService
     {

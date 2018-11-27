@@ -13,10 +13,8 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\ESFA.DC.ILRLegacy.DataStore.DataAccessLayer\ESFA.DC.ILRLegacy.DataStore.DataAccessLayer.csproj">
-      <PrivateAssets>all</PrivateAssets>
-    </ProjectReference>    
+  <ItemGroup>    
+    <ProjectReference Include="..\ESFA.DC.ILRLegacy.DataStore.DataAccessLayer\ESFA.DC.ILRLegacy.DataStore.DataAccessLayer.csproj" />    
     <ProjectReference Include="..\ESFA.DC.ILRLegacy.DataStore.Interfaces\ESFA.DC.ILRLegacy.DataStore.Interfaces.csproj">
       <PrivateAssets>all</PrivateAssets>
     </ProjectReference>

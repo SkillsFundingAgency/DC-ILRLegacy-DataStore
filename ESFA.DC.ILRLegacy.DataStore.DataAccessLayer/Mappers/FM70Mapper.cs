@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using ESFA.DC.ILRLegacy.DataStore.Interfaces;
+using ESFA.DC.ILRLegacy.DataStore.Interfaces.Mappers;
 using ESFA.DC.ILRLegacy.Models;
 
 using ILR1617 = ESFA.DC.ILRLegacy.DataStore.ILR1617EF;

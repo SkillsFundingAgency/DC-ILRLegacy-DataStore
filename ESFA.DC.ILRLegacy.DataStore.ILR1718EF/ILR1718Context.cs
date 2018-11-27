@@ -1,14 +1,16 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace ESFA.DC.ILRLegacy.DataStore.ILR1718EF
 {
-    public partial class ILR1718_Rulebase : DbContext
+    public partial class ILR1718Context : DbContext
     {
-        public ILR1718_Rulebase()
+        public ILR1718Context()
         {
         }
 
-        public ILR1718_Rulebase(DbContextOptions<ILR1718_Rulebase> options)
+        public ILR1718Context(DbContextOptions<ILR1718Context> options)
             : base(options)
         {
         }
@@ -16,6 +18,8 @@ namespace ESFA.DC.ILRLegacy.DataStore.ILR1718EF
         public virtual DbSet<AecApprenticeshipPriceEpisode> AecApprenticeshipPriceEpisode { get; set; }
         public virtual DbSet<AecApprenticeshipPriceEpisodePeriod> AecApprenticeshipPriceEpisodePeriod { get; set; }
         public virtual DbSet<AecApprenticeshipPriceEpisodePeriodisedValues> AecApprenticeshipPriceEpisodePeriodisedValues { get; set; }
+        public virtual DbSet<AecCases> AecCases { get; set; }
+        public virtual DbSet<AecGlobal> AecGlobal { get; set; }
         public virtual DbSet<AecHistoricEarningOutput> AecHistoricEarningOutput { get; set; }
         public virtual DbSet<AecLearningDelivery> AecLearningDelivery { get; set; }
         public virtual DbSet<AecLearningDeliveryPeriod> AecLearningDeliveryPeriod { get; set; }
@@ -28,7 +32,13 @@ namespace ESFA.DC.ILRLegacy.DataStore.ILR1718EF
         public virtual DbSet<AlbLearningDelivery> AlbLearningDelivery { get; set; }
         public virtual DbSet<AlbLearningDeliveryPeriod> AlbLearningDeliveryPeriod { get; set; }
         public virtual DbSet<AlbLearningDeliveryPeriodisedValues> AlbLearningDeliveryPeriodisedValues { get; set; }
+        public virtual DbSet<AppFinRecord> AppFinRecord { get; set; }
+        public virtual DbSet<CollectionDetails> CollectionDetails { get; set; }
         public virtual DbSet<ContactPreference> ContactPreference { get; set; }
+        public virtual DbSet<DasLearnerCommitment> DasLearnerCommitment { get; set; }
+        public virtual DbSet<Dpoutcome> Dpoutcome { get; set; }
+        public virtual DbSet<DvCases> DvCases { get; set; }
+        public virtual DbSet<DvGlobal> DvGlobal { get; set; }
         public virtual DbSet<DvLearner> DvLearner { get; set; }
         public virtual DbSet<DvLearningDelivery> DvLearningDelivery { get; set; }
         public virtual DbSet<EfaCases> EfaCases { get; set; }
@@ -38,29 +48,42 @@ namespace ESFA.DC.ILRLegacy.DataStore.ILR1718EF
         public virtual DbSet<EfaSfaGlobal> EfaSfaGlobal { get; set; }
         public virtual DbSet<EfaSfaLearnerPeriod> EfaSfaLearnerPeriod { get; set; }
         public virtual DbSet<EfaSfaLearnerPeriodisedValues> EfaSfaLearnerPeriodisedValues { get; set; }
-        public virtual DbSet<EmploymentStatusMonitoring> EmploymentStatusMonitoring1 { get; set; }
+        public virtual DbSet<EmploymentStatusMonitoring> EmploymentStatusMonitoring { get; set; }
+        public virtual DbSet<EsfCases> EsfCases { get; set; }
         public virtual DbSet<EsfDpoutcome> EsfDpoutcome { get; set; }
+        public virtual DbSet<EsfGlobal> EsfGlobal { get; set; }
         public virtual DbSet<EsfLearningDelivery> EsfLearningDelivery { get; set; }
         public virtual DbSet<EsfLearningDeliveryDeliverable> EsfLearningDeliveryDeliverable { get; set; }
         public virtual DbSet<EsfLearningDeliveryDeliverablePeriod> EsfLearningDeliveryDeliverablePeriod { get; set; }
         public virtual DbSet<EsfLearningDeliveryDeliverablePeriodisedValues> EsfLearningDeliveryDeliverablePeriodisedValues { get; set; }
         public virtual DbSet<EsfvalCases> EsfvalCases { get; set; }
+        public virtual DbSet<EsfvalGlobal> EsfvalGlobal { get; set; }
+        public virtual DbSet<EsfvalValidationError> EsfvalValidationError { get; set; }
+        public virtual DbSet<FileDetails> FileDetails { get; set; }
         public virtual DbSet<Learner> Learner { get; set; }
         public virtual DbSet<LearnerDestinationandProgression> LearnerDestinationandProgression { get; set; }
-        public virtual DbSet<LearnerEmploymentStatus> LearnerEmploymentStatus1 { get; set; }
-        public virtual DbSet<LearnerHe> LearnerHe1 { get; set; }
-        public virtual DbSet<LearnerHefinancialSupport> LearnerHefinancialSupport1 { get; set; }
+        public virtual DbSet<LearnerEmploymentStatus> LearnerEmploymentStatus { get; set; }
+        public virtual DbSet<LearnerFam> LearnerFam { get; set; }
+        public virtual DbSet<LearnerHe> LearnerHe { get; set; }
+        public virtual DbSet<LearnerHefinancialSupport> LearnerHefinancialSupport { get; set; }
         public virtual DbSet<LearningDelivery> LearningDelivery { get; set; }
+        public virtual DbSet<LearningDeliveryFam> LearningDeliveryFam { get; set; }
         public virtual DbSet<LearningDeliveryHe> LearningDeliveryHe { get; set; }
+        public virtual DbSet<LearningDeliveryWorkPlacement> LearningDeliveryWorkPlacement { get; set; }
         public virtual DbSet<LearningProvider> LearningProvider { get; set; }
         public virtual DbSet<LlddandHealthProblem> LlddandHealthProblem { get; set; }
+        public virtual DbSet<PriceEpisodeMatch> PriceEpisodeMatch { get; set; }
+        public virtual DbSet<PriceEpisodePeriodMatch> PriceEpisodePeriodMatch { get; set; }
+        public virtual DbSet<ProcessingData> ProcessingData { get; set; }
         public virtual DbSet<ProviderSpecDeliveryMonitoring> ProviderSpecDeliveryMonitoring { get; set; }
-        public virtual DbSet<ProviderSpecLearnerMonitoring> ProviderSpecLearnerMonitoring1 { get; set; }
+        public virtual DbSet<ProviderSpecLearnerMonitoring> ProviderSpecLearnerMonitoring { get; set; }
         public virtual DbSet<SfaCases> SfaCases { get; set; }
         public virtual DbSet<SfaGlobal> SfaGlobal { get; set; }
         public virtual DbSet<SfaLearningDelivery> SfaLearningDelivery { get; set; }
         public virtual DbSet<SfaLearningDeliveryPeriod> SfaLearningDeliveryPeriod { get; set; }
         public virtual DbSet<SfaLearningDeliveryPeriodisedValues> SfaLearningDeliveryPeriodisedValues { get; set; }
+        public virtual DbSet<Source> Source { get; set; }
+        public virtual DbSet<SourceFile> SourceFile { get; set; }
         public virtual DbSet<TblCases> TblCases { get; set; }
         public virtual DbSet<TblGlobal> TblGlobal { get; set; }
         public virtual DbSet<TblLearningDelivery> TblLearningDelivery { get; set; }
@@ -69,65 +92,23 @@ namespace ESFA.DC.ILRLegacy.DataStore.ILR1718EF
         public virtual DbSet<ValCases> ValCases { get; set; }
         public virtual DbSet<ValdpCases> ValdpCases { get; set; }
         public virtual DbSet<ValdpGlobal> ValdpGlobal { get; set; }
+        public virtual DbSet<ValdpValidationError> ValdpValidationError { get; set; }
+        public virtual DbSet<ValfdValidationError> ValfdValidationError { get; set; }
         public virtual DbSet<ValGlobal> ValGlobal { get; set; }
+        public virtual DbSet<ValidationError> ValidationError { get; set; }
+        public virtual DbSet<ValidationError1> ValidationError1 { get; set; }
+        public virtual DbSet<ValidationErrorByPeriod> ValidationErrorByPeriod { get; set; }
         public virtual DbSet<ValLearner> ValLearner { get; set; }
         public virtual DbSet<ValLearningDelivery> ValLearningDelivery { get; set; }
-
-        // Unable to generate entity type for table 'Rulebase.DV_global'. Please see the warning messages.
-        // Unable to generate entity type for table 'Rulebase.DV_Cases'. Please see the warning messages.
-        // Unable to generate entity type for table 'Rulebase.ESF_global'. Please see the warning messages.
-        // Unable to generate entity type for table 'Rulebase.ESF_Cases'. Please see the warning messages.
-        // Unable to generate entity type for table 'Rulebase.AEC_global'. Please see the warning messages.
-        // Unable to generate entity type for table 'Rulebase.VALDP_ValidationError'. Please see the warning messages.
-        // Unable to generate entity type for table 'Rulebase.VALFD_ValidationError'. Please see the warning messages.
-        // Unable to generate entity type for table 'Valid.LearnerFAM'. Please see the warning messages.
-        // Unable to generate entity type for table 'DataLock.ValidationError'. Please see the warning messages.
-        // Unable to generate entity type for table 'DataLock.PriceEpisodePeriodMatch'. Please see the warning messages.
-        // Unable to generate entity type for table 'DataLock.PriceEpisodeMatch'. Please see the warning messages.
-        // Unable to generate entity type for table 'DataLock.DasLearnerCommitment'. Please see the warning messages.
-        // Unable to generate entity type for table 'Valid.SourceFile'. Please see the warning messages.
-        // Unable to generate entity type for table 'DataLock.ValidationErrorByPeriod'. Please see the warning messages.
-        // Unable to generate entity type for table 'Valid.Source'. Please see the warning messages.
-        // Unable to generate entity type for table 'Invalid.SourceFile'. Please see the warning messages.
-        // Unable to generate entity type for table 'Valid.CollectionDetails'. Please see the warning messages.
-        // Unable to generate entity type for table 'Invalid.Source'. Please see the warning messages.
-        // Unable to generate entity type for table 'Valid.DPOutcome'. Please see the warning messages.
-        // Unable to generate entity type for table 'Invalid.CollectionDetails'. Please see the warning messages.
-        // Unable to generate entity type for table 'Invalid.LearningDeliveryWorkPlacement'. Please see the warning messages.
-        // Unable to generate entity type for table 'Invalid.LearningDeliveryFAM'. Please see the warning messages.
-        // Unable to generate entity type for table 'Invalid.LearningDelivery'. Please see the warning messages.
-        // Unable to generate entity type for table 'Invalid.LearnerHEFinancialSupport'. Please see the warning messages.
-        // Unable to generate entity type for table 'Invalid.LearnerHE'. Please see the warning messages.
-        // Unable to generate entity type for table 'Invalid.EmploymentStatusMonitoring'. Please see the warning messages.
-        // Unable to generate entity type for table 'Valid.AppFinRecord'. Please see the warning messages.
-        // Unable to generate entity type for table 'Invalid.LearnerEmploymentStatus'. Please see the warning messages.
-        // Unable to generate entity type for table 'Valid.LearningDeliveryWorkPlacement'. Please see the warning messages.
-        // Unable to generate entity type for table 'Invalid.ProviderSpecLearnerMonitoring'. Please see the warning messages.
-        // Unable to generate entity type for table 'Valid.LearningDeliveryFAM'. Please see the warning messages.
-        // Unable to generate entity type for table 'Invalid.LearnerFAM'. Please see the warning messages.
-        // Unable to generate entity type for table 'Invalid.LLDDandHealthProblem'. Please see the warning messages.
-        // Unable to generate entity type for table 'Invalid.ContactPreference'. Please see the warning messages.
-        // Unable to generate entity type for table 'Invalid.Learner'. Please see the warning messages.
-        // Unable to generate entity type for table 'Invalid.LearningProvider'. Please see the warning messages.
-        // Unable to generate entity type for table 'Invalid.DPOutcome'. Please see the warning messages.
-        // Unable to generate entity type for table 'Invalid.LearnerDestinationandProgression'. Please see the warning messages.
-        // Unable to generate entity type for table 'Invalid.LearningDeliveryHE'. Please see the warning messages.
-        // Unable to generate entity type for table 'Invalid.ProviderSpecDeliveryMonitoring'. Please see the warning messages.
-        // Unable to generate entity type for table 'Invalid.AppFinRecord'. Please see the warning messages.
-        // Unable to generate entity type for table 'dbo.FileDetails'. Please see the warning messages.
-        // Unable to generate entity type for table 'dbo.ProcessingData'. Please see the warning messages.
-        // Unable to generate entity type for table 'dbo.ValidationError'. Please see the warning messages.
-        // Unable to generate entity type for table 'dbo.VersionInfo'. Please see the warning messages.
-        // Unable to generate entity type for table 'Rulebase.VAL_ValidationError'. Please see the warning messages.
-        // Unable to generate entity type for table 'Rulebase.ESFVAL_ValidationError'. Please see the warning messages.
-        // Unable to generate entity type for table 'Rulebase.ESFVAL_global'. Please see the warning messages.
-        // Unable to generate entity type for table 'Rulebase.AEC_Cases'. Please see the warning messages.
+        public virtual DbSet<ValValidationError> ValValidationError { get; set; }
+        public virtual DbSet<VersionInfo> VersionInfo { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=.\\;Database=ILR1718_DataStore;Trusted_Connection=True;");
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                optionsBuilder.UseSqlServer("Data Source=DCT-JC-DEV;Initial Catalog=ILR1718_DataStore;Integrated Security=True");
             }
         }
 
@@ -393,6 +374,45 @@ namespace ESFA.DC.ILRLegacy.DataStore.ILR1718EF
                 entity.Property(e => e.Period9)
                     .HasColumnName("Period_9")
                     .HasColumnType("decimal(15, 5)");
+            });
+
+            modelBuilder.Entity<AecCases>(entity =>
+            {
+                entity.ToTable("AEC_Cases", "Rulebase");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.CaseData)
+                    .IsRequired()
+                    .HasColumnType("xml");
+
+                entity.Property(e => e.LearnRefNumber)
+                    .HasMaxLength(12)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Ukprn).HasColumnName("UKPRN");
+            });
+
+            modelBuilder.Entity<AecGlobal>(entity =>
+            {
+                entity.ToTable("AEC_global", "Rulebase");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.Larsversion)
+                    .HasColumnName("LARSVersion")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.RulebaseVersion)
+                    .HasMaxLength(10)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Ukprn).HasColumnName("UKPRN");
+
+                entity.Property(e => e.Year)
+                    .HasMaxLength(4)
+                    .IsUnicode(false);
             });
 
             modelBuilder.Entity<AecHistoricEarningOutput>(entity =>
@@ -1017,6 +1037,55 @@ namespace ESFA.DC.ILRLegacy.DataStore.ILR1718EF
                     .HasColumnType("decimal(15, 5)");
             });
 
+            modelBuilder.Entity<AppFinRecord>(entity =>
+            {
+                entity.ToTable("AppFinRecord", "Valid");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.AfinAmount).HasColumnName("AFinAmount");
+
+                entity.Property(e => e.AfinCode).HasColumnName("AFinCode");
+
+                entity.Property(e => e.AfinDate)
+                    .HasColumnName("AFinDate")
+                    .HasColumnType("date");
+
+                entity.Property(e => e.AfinType)
+                    .IsRequired()
+                    .HasColumnName("AFinType")
+                    .HasMaxLength(3)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.LearnRefNumber)
+                    .IsRequired()
+                    .HasMaxLength(12)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Ukprn).HasColumnName("UKPRN");
+            });
+
+            modelBuilder.Entity<CollectionDetails>(entity =>
+            {
+                entity.ToTable("CollectionDetails", "Valid");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.Collection)
+                    .IsRequired()
+                    .HasMaxLength(3)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.FilePreparationDate).HasColumnType("date");
+
+                entity.Property(e => e.Ukprn).HasColumnName("UKPRN");
+
+                entity.Property(e => e.Year)
+                    .IsRequired()
+                    .HasMaxLength(4)
+                    .IsUnicode(false);
+            });
+
             modelBuilder.Entity<ContactPreference>(entity =>
             {
                 entity.HasKey(e => new { e.Ukprn, e.LearnRefNumber, e.ContPrefType, e.ContPrefCode });
@@ -1035,6 +1104,78 @@ namespace ESFA.DC.ILRLegacy.DataStore.ILR1718EF
                 entity.Property(e => e.ContPrefType)
                     .HasMaxLength(3)
                     .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<DasLearnerCommitment>(entity =>
+            {
+                entity.ToTable("DasLearnerCommitment", "DataLock");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.CommitmentId)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.LearnRefNumber)
+                    .IsRequired()
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Dpoutcome>(entity =>
+            {
+                entity.ToTable("DPOutcome", "Valid");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.LearnRefNumber)
+                    .IsRequired()
+                    .HasMaxLength(12)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.OutCollDate).HasColumnType("date");
+
+                entity.Property(e => e.OutEndDate).HasColumnType("date");
+
+                entity.Property(e => e.OutStartDate).HasColumnType("date");
+
+                entity.Property(e => e.OutType)
+                    .IsRequired()
+                    .HasMaxLength(3)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Ukprn).HasColumnName("UKPRN");
+            });
+
+            modelBuilder.Entity<DvCases>(entity =>
+            {
+                entity.ToTable("DV_Cases", "Rulebase");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.CaseData)
+                    .IsRequired()
+                    .HasColumnType("xml");
+
+                entity.Property(e => e.LearnRefNumber)
+                    .HasMaxLength(12)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Ukprn).HasColumnName("UKPRN");
+            });
+
+            modelBuilder.Entity<DvGlobal>(entity =>
+            {
+                entity.ToTable("DV_global", "Rulebase");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.RulebaseVersion)
+                    .HasMaxLength(10)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Ukprn).HasColumnName("UKPRN");
             });
 
             modelBuilder.Entity<DvLearner>(entity =>
@@ -1770,6 +1911,23 @@ namespace ESFA.DC.ILRLegacy.DataStore.ILR1718EF
                 entity.Property(e => e.Esmcode).HasColumnName("ESMCode");
             });
 
+            modelBuilder.Entity<EsfCases>(entity =>
+            {
+                entity.ToTable("ESF_Cases", "Rulebase");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.CaseData)
+                    .IsRequired()
+                    .HasColumnType("xml");
+
+                entity.Property(e => e.LearnRefNumber)
+                    .HasMaxLength(12)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Ukprn).HasColumnName("UKPRN");
+            });
+
             modelBuilder.Entity<EsfDpoutcome>(entity =>
             {
                 entity.HasKey(e => new { e.Ukprn, e.LearnRefNumber, e.OutCode, e.OutType, e.OutStartDate });
@@ -1795,6 +1953,19 @@ namespace ESFA.DC.ILRLegacy.DataStore.ILR1718EF
                 entity.Property(e => e.ProgressionType)
                     .HasMaxLength(50)
                     .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<EsfGlobal>(entity =>
+            {
+                entity.ToTable("ESF_global", "Rulebase");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.RulebaseVersion)
+                    .HasMaxLength(10)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Ukprn).HasColumnName("UKPRN");
             });
 
             modelBuilder.Entity<EsfLearningDelivery>(entity =>
@@ -1976,6 +2147,59 @@ namespace ESFA.DC.ILRLegacy.DataStore.ILR1718EF
                 entity.Property(e => e.Ukprn).HasColumnName("UKPRN");
             });
 
+            modelBuilder.Entity<EsfvalGlobal>(entity =>
+            {
+                entity.ToTable("ESFVAL_global", "Rulebase");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.RulebaseVersion)
+                    .HasMaxLength(10)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Ukprn).HasColumnName("UKPRN");
+            });
+
+            modelBuilder.Entity<EsfvalValidationError>(entity =>
+            {
+                entity.ToTable("ESFVAL_ValidationError", "Rulebase");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.ErrorString)
+                    .HasMaxLength(2000)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.FieldValues)
+                    .HasMaxLength(2000)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.LearnRefNumber)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.RuleId)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Ukprn).HasColumnName("UKPRN");
+            });
+
+            modelBuilder.Entity<FileDetails>(entity =>
+            {
+                entity.HasIndex(e => new { e.Ukprn, e.Filename, e.Success })
+                    .HasName("PK_dbo.FileDetails")
+                    .IsUnique();
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.Filename).HasMaxLength(50);
+
+                entity.Property(e => e.SubmittedTime).HasColumnType("datetime");
+
+                entity.Property(e => e.Ukprn).HasColumnName("UKPRN");
+            });
+
             modelBuilder.Entity<Learner>(entity =>
             {
                 entity.HasKey(e => new { e.Ukprn, e.LearnRefNumber });
@@ -2098,6 +2322,27 @@ namespace ESFA.DC.ILRLegacy.DataStore.ILR1718EF
                 entity.Property(e => e.DateEmpStatApp).HasColumnType("date");
             });
 
+            modelBuilder.Entity<LearnerFam>(entity =>
+            {
+                entity.ToTable("LearnerFAM", "Valid");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.LearnFamcode).HasColumnName("LearnFAMCode");
+
+                entity.Property(e => e.LearnFamtype)
+                    .HasColumnName("LearnFAMType")
+                    .HasMaxLength(3)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.LearnRefNumber)
+                    .IsRequired()
+                    .HasMaxLength(12)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Ukprn).HasColumnName("UKPRN");
+            });
+
             modelBuilder.Entity<LearnerHe>(entity =>
             {
                 entity.HasKey(e => new { e.Ukprn, e.LearnRefNumber });
@@ -2190,6 +2435,40 @@ namespace ESFA.DC.ILRLegacy.DataStore.ILR1718EF
                     .IsUnicode(false);
             });
 
+            modelBuilder.Entity<LearningDeliveryFam>(entity =>
+            {
+                entity.ToTable("LearningDeliveryFAM", "Valid");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.LearnDelFamcode)
+                    .IsRequired()
+                    .HasColumnName("LearnDelFAMCode")
+                    .HasMaxLength(5)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.LearnDelFamdateFrom)
+                    .HasColumnName("LearnDelFAMDateFrom")
+                    .HasColumnType("date");
+
+                entity.Property(e => e.LearnDelFamdateTo)
+                    .HasColumnName("LearnDelFAMDateTo")
+                    .HasColumnType("date");
+
+                entity.Property(e => e.LearnDelFamtype)
+                    .IsRequired()
+                    .HasColumnName("LearnDelFAMType")
+                    .HasMaxLength(3)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.LearnRefNumber)
+                    .IsRequired()
+                    .HasMaxLength(12)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Ukprn).HasColumnName("UKPRN");
+            });
+
             modelBuilder.Entity<LearningDeliveryHe>(entity =>
             {
                 entity.HasKey(e => new { e.Ukprn, e.LearnRefNumber, e.AimSeqNumber });
@@ -2277,6 +2556,24 @@ namespace ESFA.DC.ILRLegacy.DataStore.ILR1718EF
                 entity.Property(e => e.Yearstu).HasColumnName("YEARSTU");
             });
 
+            modelBuilder.Entity<LearningDeliveryWorkPlacement>(entity =>
+            {
+                entity.ToTable("LearningDeliveryWorkPlacement", "Valid");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.LearnRefNumber)
+                    .IsRequired()
+                    .HasMaxLength(12)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Ukprn).HasColumnName("UKPRN");
+
+                entity.Property(e => e.WorkPlaceEndDate).HasColumnType("date");
+
+                entity.Property(e => e.WorkPlaceStartDate).HasColumnType("date");
+            });
+
             modelBuilder.Entity<LearningProvider>(entity =>
             {
                 entity.HasKey(e => e.Ukprn);
@@ -2303,6 +2600,70 @@ namespace ESFA.DC.ILRLegacy.DataStore.ILR1718EF
                 entity.Property(e => e.Llddcat).HasColumnName("LLDDCat");
 
                 entity.Property(e => e.PrimaryLldd).HasColumnName("PrimaryLLDD");
+            });
+
+            modelBuilder.Entity<PriceEpisodeMatch>(entity =>
+            {
+                entity.ToTable("PriceEpisodeMatch", "DataLock");
+
+                entity.HasIndex(e => e.Ukprn)
+                    .HasName("IDX_PriceEpisodeMatch_UkPrn");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.CollectionPeriodName)
+                    .IsRequired()
+                    .HasMaxLength(8)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.LearnRefNumber)
+                    .HasMaxLength(12)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.PriceEpisodeIdentifier)
+                    .IsRequired()
+                    .HasMaxLength(25)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<PriceEpisodePeriodMatch>(entity =>
+            {
+                entity.ToTable("PriceEpisodePeriodMatch", "DataLock");
+
+                entity.HasIndex(e => e.Ukprn)
+                    .HasName("IDX_PriceEpisodePeriodMatch_UkPrn");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.CollectionPeriodName)
+                    .IsRequired()
+                    .HasMaxLength(8)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.LearnRefNumber)
+                    .HasMaxLength(12)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.PriceEpisodeIdentifier)
+                    .IsRequired()
+                    .HasMaxLength(25)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.VersionId)
+                    .IsRequired()
+                    .HasMaxLength(25)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<ProcessingData>(entity =>
+            {
+                entity.Property(e => e.ExecutionTime).HasMaxLength(20);
+
+                entity.Property(e => e.FileDetailsId).HasColumnName("FileDetailsID");
+
+                entity.Property(e => e.ProcessingStep).HasMaxLength(100);
+
+                entity.Property(e => e.Ukprn).HasColumnName("UKPRN");
             });
 
             modelBuilder.Entity<ProviderSpecDeliveryMonitoring>(entity =>
@@ -2627,6 +2988,79 @@ namespace ESFA.DC.ILRLegacy.DataStore.ILR1718EF
                     .HasColumnType("decimal(15, 5)");
             });
 
+            modelBuilder.Entity<Source>(entity =>
+            {
+                entity.ToTable("Source", "Valid");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.ComponentSetVersion)
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.DateTime).HasColumnType("datetime");
+
+                entity.Property(e => e.ProtectiveMarking)
+                    .HasMaxLength(30)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ReferenceData)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Release)
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.SerialNo)
+                    .HasMaxLength(2)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.SoftwarePackage)
+                    .HasMaxLength(30)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.SoftwareSupplier)
+                    .HasMaxLength(40)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Ukprn).HasColumnName("UKPRN");
+            });
+
+            modelBuilder.Entity<SourceFile>(entity =>
+            {
+                entity.ToTable("SourceFile", "Valid");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.DateTime).HasColumnType("datetime");
+
+                entity.Property(e => e.FilePreparationDate).HasColumnType("date");
+
+                entity.Property(e => e.Release)
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.SerialNo)
+                    .HasMaxLength(2)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.SoftwarePackage)
+                    .HasMaxLength(30)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.SoftwareSupplier)
+                    .HasMaxLength(40)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.SourceFileName)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Ukprn).HasColumnName("UKPRN");
+            });
+
             modelBuilder.Entity<TblCases>(entity =>
             {
                 entity.HasKey(e => new { e.Ukprn, e.LearnRefNumber });
@@ -2897,6 +3331,56 @@ namespace ESFA.DC.ILRLegacy.DataStore.ILR1718EF
                     .IsUnicode(false);
             });
 
+            modelBuilder.Entity<ValdpValidationError>(entity =>
+            {
+                entity.ToTable("VALDP_ValidationError", "Rulebase");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.ErrorString)
+                    .HasMaxLength(2000)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.FieldValues)
+                    .HasMaxLength(2000)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.LearnRefNumber)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.RuleId)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Ukprn).HasColumnName("UKPRN");
+            });
+
+            modelBuilder.Entity<ValfdValidationError>(entity =>
+            {
+                entity.ToTable("VALFD_ValidationError", "Rulebase");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.ErrorString)
+                    .HasMaxLength(2000)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.FieldValues)
+                    .HasMaxLength(2000)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.LearnRefNumber)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.RuleId)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Ukprn).HasColumnName("UKPRN");
+            });
+
             modelBuilder.Entity<ValGlobal>(entity =>
             {
                 entity.HasKey(e => e.Ukprn);
@@ -2929,6 +3413,91 @@ namespace ESFA.DC.ILRLegacy.DataStore.ILR1718EF
                     .IsUnicode(false);
             });
 
+            modelBuilder.Entity<ValidationError>(entity =>
+            {
+                entity.Property(e => e.FieldValues).HasMaxLength(2000);
+
+                entity.Property(e => e.LearnAimRef)
+                    .HasMaxLength(1000)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.LearnRefNumber)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.RuleName)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Severity)
+                    .HasMaxLength(2)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Source)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.SwsupAimId)
+                    .HasColumnName("SWSupAimID")
+                    .HasMaxLength(1000)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Ukprn).HasColumnName("UKPRN");
+            });
+
+            modelBuilder.Entity<ValidationError1>(entity =>
+            {
+                entity.ToTable("ValidationError", "DataLock");
+
+                entity.HasIndex(e => e.Ukprn)
+                    .HasName("IDX_ValidationError_UkPrn");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.CollectionPeriodName)
+                    .IsRequired()
+                    .HasMaxLength(8)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.LearnRefNumber)
+                    .HasMaxLength(12)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.PriceEpisodeIdentifier)
+                    .IsRequired()
+                    .HasMaxLength(25)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.RuleId)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<ValidationErrorByPeriod>(entity =>
+            {
+                entity.ToTable("ValidationErrorByPeriod", "DataLock");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.CollectionPeriodName)
+                    .IsRequired()
+                    .HasMaxLength(8)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.LearnRefNumber)
+                    .HasMaxLength(12)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.PriceEpisodeIdentifier)
+                    .IsRequired()
+                    .HasMaxLength(25)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.RuleId)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+            });
+
             modelBuilder.Entity<ValLearner>(entity =>
             {
                 entity.HasKey(e => new { e.Ukprn, e.LearnRefNumber });
@@ -2950,6 +3519,40 @@ namespace ESFA.DC.ILRLegacy.DataStore.ILR1718EF
 
                 entity.Property(e => e.Ukprn).HasColumnName("UKPRN");
             });
+
+            modelBuilder.Entity<ValValidationError>(entity =>
+            {
+                entity.ToTable("VAL_ValidationError", "Rulebase");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.ErrorString)
+                    .HasMaxLength(2000)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.FieldValues)
+                    .HasMaxLength(2000)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.LearnRefNumber)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.RuleId)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Ukprn).HasColumnName("UKPRN");
+            });
+
+            modelBuilder.Entity<VersionInfo>(entity =>
+            {
+                entity.Property(e => e.Date).HasColumnType("date");
+            });
+
+            OnModelCreatingPartial(modelBuilder);
         }
+
+        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }
