@@ -2,6 +2,8 @@
 {
     public class FM70PeriodisedValues
     {
+        public int FundingYear { get; set; }
+
         public int UKPRN { get; set; }
 
         public string LearnRefNumber { get; set; }

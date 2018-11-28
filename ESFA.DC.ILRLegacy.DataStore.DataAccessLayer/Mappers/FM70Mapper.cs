@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using ESFA.DC.ILRLegacy.DataStore.Interfaces;
 using ESFA.DC.ILRLegacy.DataStore.Interfaces.Mappers;
 using ESFA.DC.ILRLegacy.Models;
 
@@ -16,6 +15,7 @@ namespace ESFA.DC.ILRLegacy.DataStore.DataAccessLayer.Mappers
         {
             return entities.Select(e => new FM70PeriodisedValues
             {
+                FundingYear = 2016,
                 UKPRN = e.Ukprn,
                 LearnRefNumber = e.LearnRefNumber,
                 AimSeqNumber = e.AimSeqNumber,
@@ -41,6 +41,7 @@ namespace ESFA.DC.ILRLegacy.DataStore.DataAccessLayer.Mappers
         {
             return entities.Select(e => new FM70PeriodisedValues
             {
+                FundingYear = 2017,
                 UKPRN = e.Ukprn,
                 LearnRefNumber = e.LearnRefNumber,
                 AimSeqNumber = e.AimSeqNumber,
