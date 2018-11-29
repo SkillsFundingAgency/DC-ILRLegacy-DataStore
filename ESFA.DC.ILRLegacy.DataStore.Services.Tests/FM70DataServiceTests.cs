@@ -1,5 +1,6 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
+using Autofac;
 using ESFA.DC.ILRLegacy.DataStore.DataAccessLayer.Mappers;
 using ESFA.DC.ILRLegacy.DataStore.DataAccessLayer.Repositories;
 using ESFA.DC.ILRLegacy.Models;
@@ -14,8 +15,12 @@ namespace ESFA.DC.ILRLegacy.DataStore.Services.Tests
         [Fact]
         public async Task TestDataServiceDoesntBlowUp()
         {
+            var container = new ContainerBuilder();
+            container.RegisterModule<DependencyInjectionModule>();
+
+            container.Build();
+
             const int ukPrn = 10006439;
-            var logger = new Mock<ILogger>();
 
             var config = new ILRConfiguration
             {
@@ -23,7 +28,7 @@ namespace ESFA.DC.ILRLegacy.DataStore.Services.Tests
                 ILR1718ConnectionString = string.Empty
             };
 
-            var repo = new FM70Repository(logger.Object);
+            var repo = new FM70Repository();
             var mapper = new FM70Mapper();
             var dataService = new FM70DataService(repo, mapper, config);
 

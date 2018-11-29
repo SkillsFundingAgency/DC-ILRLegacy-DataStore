@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using ESFA.DC.ILRLegacy.DataStore.Interfaces.Repositories;
 using ESFA.DC.ILRLegacy.DataStore.Models;
 using ESFA.DC.ILRLegacy.Models;
-using ESFA.DC.Logging.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 using ILR1617 = ESFA.DC.ILRLegacy.DataStore.ILR1617EF;
@@ -15,14 +14,8 @@ namespace ESFA.DC.ILRLegacy.DataStore.DataAccessLayer.Repositories
 {
     public class FileDetailsRepository : IFileDetailsRepository
     {
-        private readonly ILogger _logger;
         private ILR1617.ILR1617Context _1617Context;
         private ILR1718.ILR1718Context _1718Context;
-
-        public FileDetailsRepository(ILogger logger)
-        {
-            _logger = logger;
-        }
 
         public async Task<ILRFileDetails> GetLatest1617FileDetailsPerUkPrn(
             int ukPrn,
@@ -56,7 +49,7 @@ namespace ESFA.DC.ILRLegacy.DataStore.DataAccessLayer.Repositories
             }
             catch (Exception ex)
             {
-                _logger.LogError($"Failed to get 16/17 file details with ukPrn {ukPrn}", ex);
+                // _logger.LogError($"Failed to get 16/17 file details with ukPrn {ukPrn}", ex);
             }
 
             return result;
@@ -94,7 +87,7 @@ namespace ESFA.DC.ILRLegacy.DataStore.DataAccessLayer.Repositories
             }
             catch (Exception ex)
             {
-                _logger.LogError($"Failed to get 17/18 file details with ukPrn {ukPrn}", ex);
+                // _logger.LogError($"Failed to get 17/18 file details with ukPrn {ukPrn}", ex);
             }
 
             return result;

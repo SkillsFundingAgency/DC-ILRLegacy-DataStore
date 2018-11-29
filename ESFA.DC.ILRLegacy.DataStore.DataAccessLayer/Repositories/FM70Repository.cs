@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using ESFA.DC.ILRLegacy.DataStore.Interfaces;
 using ESFA.DC.ILRLegacy.DataStore.Interfaces.Repositories;
 using ESFA.DC.ILRLegacy.Models;
-using ESFA.DC.Logging.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using EsfLearningDeliveryDeliverablePeriodisedValues = ESFA.DC.ILRLegacy.DataStore.ILR1617EF.EsfLearningDeliveryDeliverablePeriodisedValues;
+
 using ILR1617 = ESFA.DC.ILRLegacy.DataStore.ILR1617EF;
 using ILR1718 = ESFA.DC.ILRLegacy.DataStore.ILR1718EF;
 
@@ -16,21 +14,16 @@ namespace ESFA.DC.ILRLegacy.DataStore.DataAccessLayer.Repositories
 {
     public class FM70Repository : IFM70Repository
     {
-        private readonly ILogger _logger;
+        // private readonly ILogger _logger;
         private ILR1617.ILR1617Context _1617Context;
         private ILR1718.ILR1718Context _1718Context;
 
-        public FM70Repository(ILogger logger)
-        {
-            _logger = logger;
-        }
-
-        public async Task<IList<EsfLearningDeliveryDeliverablePeriodisedValues>> Get1617PeriodisedValues(
+        public async Task<IList<ILR1617.EsfLearningDeliveryDeliverablePeriodisedValues>> Get1617PeriodisedValues(
             int ukPrn,
             ILRConfiguration configuration,
             CancellationToken cancellationToken)
         {
-            IList<EsfLearningDeliveryDeliverablePeriodisedValues> values = null;
+            IList<ILR1617.EsfLearningDeliveryDeliverablePeriodisedValues> values = null;
             try
             {
                 if (cancellationToken.IsCancellationRequested)
@@ -52,7 +45,7 @@ namespace ESFA.DC.ILRLegacy.DataStore.DataAccessLayer.Repositories
             }
             catch (Exception ex)
             {
-                _logger.LogError($"Failed to get 16/17 FM70 periodised values with ukPrn {ukPrn}", ex);
+                // _logger.LogError($"Failed to get 16/17 FM70 periodised values with ukPrn {ukPrn}", ex);
             }
 
             return values;
@@ -85,7 +78,7 @@ namespace ESFA.DC.ILRLegacy.DataStore.DataAccessLayer.Repositories
             }
             catch (Exception ex)
             {
-                _logger.LogError($"Failed to get 17/18 FM70 periodised values with ukPrn {ukPrn}", ex);
+                // _logger.LogError($"Failed to get 17/18 FM70 periodised values with ukPrn {ukPrn}", ex);
             }
 
             return values;
