@@ -4,8 +4,6 @@ using Autofac;
 using ESFA.DC.ILRLegacy.DataStore.DataAccessLayer.Mappers;
 using ESFA.DC.ILRLegacy.DataStore.DataAccessLayer.Repositories;
 using ESFA.DC.ILRLegacy.Models;
-using ESFA.DC.Logging.Interfaces;
-using Moq;
 using Xunit;
 
 namespace ESFA.DC.ILRLegacy.DataStore.Services.Tests
