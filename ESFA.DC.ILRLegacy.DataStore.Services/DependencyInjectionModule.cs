@@ -11,12 +11,12 @@ namespace ESFA.DC.ILRLegacy.DataStore.Services
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<FileDetailsRepository>().As<IFileDetailsRepository>();
-            builder.RegisterType<FM70Repository>().As<IFM70Repository>();
+            builder.RegisterType<FileDetailsRepository>().As<IFileDetailsRepository>().InstancePerLifetimeScope();
+            builder.RegisterType<FM70Repository>().As<IFM70Repository>().InstancePerLifetimeScope();
 
-            builder.RegisterType<FM70Mapper>().As<IFM70Mapper>();
+            builder.RegisterType<FM70Mapper>().As<IFM70Mapper>().InstancePerLifetimeScope();
 
-            builder.RegisterType<FM70DataService>().As<IFM70DataService>();
+            builder.RegisterType<FM70DataService>().As<IFM70DataService>().InstancePerLifetimeScope();
         }
     }
 }
