@@ -16,6 +16,7 @@ namespace ESFA.DC.ILRLegacy.DataStore.Services
 
             builder.RegisterType<FM70Mapper>().As<IFM70Mapper>().InstancePerLifetimeScope();
 
+            builder.RegisterType<FileDetailsDataService>().As<IFileDetailsDataService>().InstancePerLifetimeScope();
             builder.RegisterType<FM70DataService>().As<IFM70DataService>().InstancePerLifetimeScope();
         }
     }
