@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <CodeAnalysisRuleSet>ESFA.DC.ILRLegacy.DataStore.Configuration.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <CodeAnalysisRuleSet>ESFA.DC.ILRLegacy.DataStore.Configuration.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.9.0-beta1" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.1-beta.61">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ESFA.DC.ILRLegacy.DataStore.DataAccessLayer\ESFA.DC.ILRLegacy.DataStore.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\ESFA.DC.ILRLegacy.DataStore.Interfaces\ESFA.DC.ILRLegacy.DataStore.Interfaces.csproj" />
+    <ProjectReference Include="..\ESFA.DC.ILRLegacy.DataStore.Services\ESFA.DC.ILRLegacy.DataStore.Services.csproj" />
+  </ItemGroup>
+
+</Project>
